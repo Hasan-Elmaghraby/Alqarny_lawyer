@@ -2864,7 +2864,7 @@ html[dir=ltr] .input_search_wrapper::before {
 }
 @media only screen and (max-width: 500px) {
   .footer_sec__::after {
-    bottom: 17%;
+    bottom: 20%;
   }
 }
 
@@ -3116,6 +3116,7 @@ html[dir=ltr] .footer_list__ a {
   gap: 10px;
   -webkit-transition: 0.4s;
   transition: 0.4s;
+  cursor: pointer;
 }
 .contacts_footer .block .figure__ {
   -webkit-transition: 0.4s;

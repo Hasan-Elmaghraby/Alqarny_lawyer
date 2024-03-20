@@ -40,7 +40,7 @@
       bottom: 22%;
     }
     @include xxs {
-      bottom: 17%;
+      bottom: 20%;
     }
   }
 }
@@ -267,6 +267,7 @@
     align-items: center;
     gap: 10px;
     transition: 0.4s;
+    cursor: pointer;
 
     .figure__ {
       transition: 0.4s;

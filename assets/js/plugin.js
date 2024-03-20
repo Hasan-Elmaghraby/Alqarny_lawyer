@@ -7,6 +7,7 @@ jQuery(document).ready(function ($) {
   toggleSideMenuInSmallScreens($);
   stickyHeader($);
   lazyLoad();
+  syncActiveSection($);
 });
 
 // functions init
@@ -101,7 +102,7 @@ function allSiteSwiperInit() {
   };
 
   const heroSection = {
-    autoplay: false,
+    autoplay: true,
     className: ".hero_sec__",
     // breakpoints: homeOpinionSwiperBreakNormalPoints,
     observer: true,
@@ -240,3 +241,20 @@ function customDropdown() {
 }
 
 Fancybox.bind("[data-fancybox]", {});
+
+function syncActiveSection($) {
+  // Add padding top to body when you want to fixed header
+  // $("body").css("paddingTop", $(".fixed_header__").innerHeight());
+
+  $(window).scroll(function () {
+    $(".section-scroll").each(function () {
+      if ($(window).scrollTop() + 130 > $(this).offset().top) {
+        let scrollId = $(this).attr("id");
+        console.log(scrollId);
+        $(".nav-list-om li").removeClass("active");
+
+        $('.nav-list-om li[data-scroll="' + scrollId + '"]').addClass("active");
+      }
+    });
+  });
+}
