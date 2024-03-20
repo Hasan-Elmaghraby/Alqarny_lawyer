@@ -1,0 +1,21 @@
+.block_lense_details {
+  display: flex;
+  align-items: center;
+  height: 45px;
+  padding: 0 16px;
+  background-color: #fff;
+  border-inline-start: 4px solid rgba($primaryColor, 0.3);
+
+  .title {
+    display: flex;
+    gap: 15px;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #818181;
+  }
+
+  .subtitle {
+    color: $primaryColor;
+    font-weight: 700;
+  }
+}

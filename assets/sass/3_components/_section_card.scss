@@ -1,0 +1,70 @@
+.section_card {
+  display: block;
+  position: relative;
+  width: 100%;
+  transition: $mainTransition;
+  text-align: start;
+
+  &:hover {
+    transform: translateY(-10px);
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+      255.58deg,
+      #4d7785 -23.98%,
+      rgba(77, 119, 133, 0) 76.89%
+    );
+  }
+
+  .figure__ {
+    max-width: 580px;
+    @include p-bottom(251, 580);
+  }
+
+  .card_desc {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    inset-inline-start: percentage(calc(70 / 580));
+    padding-inline-end: percentage(calc(194 / 580));
+    z-index: 1;
+
+    @include sm {
+      padding-inline-end: 12%;
+    }
+  }
+
+  .title {
+    font-size: 2.6rem;
+    font-weight: 800;
+    color: $primaryColor;
+    margin-bottom: 20px;
+
+    @include sm {
+      font-size: 2.2rem;
+      margin-bottom: 5px;
+    }
+
+    @include xxs {
+      font-size: 1.6rem;
+      margin-bottom: 0px;
+    }
+  }
+
+  .parg {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: $primaryColor;
+
+    @include xxs {
+      font-size: 1.4rem;
+    }
+  }
+}

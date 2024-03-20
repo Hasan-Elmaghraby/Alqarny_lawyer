@@ -1,0 +1,52 @@
+.main_card {
+  display: block;
+  position: relative;
+  padding: 7rem 3rem 5rem 3rem;
+  background-color: $greyColor;
+  transition: 0.5s;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+  border-top: 8px solid $secondaryColor;
+
+  &.style_bottom {
+    border-top: none;
+    border-bottom: 8px solid $secondaryColor;
+
+    @include sm {
+      border-bottom: none;
+      border-top: 8px solid $secondaryColor;
+    }
+  }
+
+  @include xxs {
+    width: auto;
+  }
+
+  .figure__ {
+    width: fit-content;
+    margin: 0 auto;
+    position: relative;
+    margin-bottom: 4.5rem;
+
+    &::before {
+      position: absolute;
+      content: "";
+      @include circle(7.3rem);
+      background-color: rgba(#000, 0.03);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 0.5rem;
+  }
+  .default_parg {
+    font-size: 1.4rem;
+  }
+}

@@ -1,0 +1,92 @@
+.services_cards_warapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.service_card {
+  position: relative;
+  transition: 0.5s;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 242px;
+  justify-content: space-between;
+  padding: 4rem 1rem;
+
+  &:hover {
+    .figure__ {
+      transform: scale(1.1);
+    }
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    border: 1px solid transparent;
+    border-image-slice: 43;
+    border-image-source: url(../images/shapes/services/Line.svg);
+    top: 50%;
+    transform: translateY(-50%);
+    inset-inline-end: 0;
+    height: 177px;
+  }
+
+  .figure__ {
+    margin-bottom: 10px;
+    justify-content: center;
+    transition: 0.5s;
+  }
+
+  .title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: $paragraphSecondaryColor;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .subtitle {
+    font-size: 1.6rem;
+    color: $paragraphMainColor;
+    font-weight: 300;
+  }
+
+  @include lg {
+    &:nth-child(4n)::before,
+    &:last-child::before {
+      display: none;
+    }
+    flex: 25%;
+  }
+
+  @include md_min {
+    &:nth-child(3n)::before,
+    &:last-child::before {
+      display: none;
+    }
+    flex: calc(100% / 3);
+  }
+
+  @include sm_min {
+    &:nth-child(3n)::before,
+    &:last-child::before {
+      display: none;
+    }
+    flex: calc(100% / 3);
+  }
+
+  @include xs_min {
+    &:nth-child(2n)::before,
+    &:last-child::before {
+      display: none;
+    }
+    flex: 50%;
+  }
+
+  @include xxs {
+    &::before {
+      display: none;
+    }
+    flex: 100%;
+  }
+}

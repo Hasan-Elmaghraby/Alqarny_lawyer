@@ -1,0 +1,50 @@
+.block_message_vision {
+  border: 1px solid #4d7785;
+  padding: 10px 25px 25px;
+
+  .title_block {
+    width: fit-content;
+    padding: 0 5px;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #4d7785;
+    margin: 0;
+  }
+
+  .block_desc {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    @include xxs {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+
+  .figure_block {
+    position: relative;
+    width: fit-content;
+
+    &::before {
+      position: absolute;
+      content: "";
+      @include circle(60px);
+      background-color: #4d77850d;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+    }
+
+    @include xxs {
+      margin-top: 20px;
+    }
+  }
+
+  .parg {
+    font-size: 14px;
+    font-weight: 400;
+    color: #818181;
+  }
+}

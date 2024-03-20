@@ -1,0 +1,15 @@
+.contract_drafting {
+  .figure__ {
+    @include p-bottom(430, 1197);
+  }
+  .title {
+    margin-top: 5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #000;
+  }
+  .default_parg {
+    margin-bottom: 1.5rem;
+  }
+}
