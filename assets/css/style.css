@@ -1782,11 +1782,11 @@ html[dir=ltr] .site_link .icon__ {
 }
 @media only screen and (max-width: 500px) {
   .service_card {
-    -webkit-box-flex: 100%;
-        -ms-flex: 100%;
-            flex: 100%;
+    -webkit-box-flex: 50%;
+        -ms-flex: 50%;
+            flex: 50%;
   }
-  .service_card::before {
+  .service_card:nth-child(2n)::before, .service_card:last-child::before {
     display: none;
   }
 }

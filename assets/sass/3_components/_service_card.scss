@@ -84,9 +84,10 @@
   }
 
   @include xxs {
-    &::before {
+    &:nth-child(2n)::before,
+    &:last-child::before {
       display: none;
     }
-    flex: 100%;
+    flex: 50%;
   }
 }
