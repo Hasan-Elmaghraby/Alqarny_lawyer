@@ -2152,12 +2152,6 @@ html[dir=ltr] .nav-om {
   margin-bottom: 0;
   gap: 40px;
 }
-.nav-om .nav-list-om:hover li > a {
-  opacity: 0.5;
-}
-.nav-om .nav-list-om:hover li > a:hover {
-  opacity: 1;
-}
 @media only screen and (max-width: 1199px) {
   .nav-om .nav-list-om {
     gap: 30px;
@@ -4122,6 +4116,8 @@ html[dir=ltr] .swiper-button-prev::after {
 }
 
 .default_section__ {
+  -webkit-transition: 1s;
+  transition: 1s;
   padding-bottom: 50px;
   padding-top: 50px;
 }
@@ -4815,6 +4811,12 @@ html[dir=ltr] .rotate_arrow_en {
 
 iframe {
   border-radius: 10px;
+}
+
+.section--hidden {
+  opacity: 0;
+  -webkit-transform: translateY(8rem);
+          transform: translateY(8rem);
 }
 
 .contract_drafting .figure__ {

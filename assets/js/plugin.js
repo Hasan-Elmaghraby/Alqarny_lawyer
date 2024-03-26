@@ -8,6 +8,9 @@ jQuery(document).ready(function ($) {
   stickyHeader($);
   lazyLoad();
   syncActiveSection($);
+  lazyLoadSection();
+  fadeMenu();
+  lazyLoadSection();
 });
 
 // functions init
@@ -257,4 +260,57 @@ function syncActiveSection($) {
       }
     });
   });
+}
+
+function lazyLoadSection() {
+  const allSections = document.querySelectorAll(".default_section__");
+
+  const revealSection = function (entries, observer) {
+    const [entry] = entries;
+    // console.log(entry);
+
+    if (!entry.isIntersecting) return;
+    entry.target.classList.remove("section--hidden");
+    observer.unobserve(entry.target);
+  };
+
+  const sectionObserver = new IntersectionObserver(revealSection, {
+    root: null,
+    threshold: 0.1,
+  });
+
+  allSections.forEach(function (section) {
+    sectionObserver.observe(section);
+    section.classList.add("section--hidden");
+  });
+}
+
+function fadeMenu() {
+  // //Menu Fade animation
+
+  const nav = document.querySelector(".nav-list-om");
+  document
+    .querySelectorAll(".header_list_item__ > a")
+    .forEach((el) => el.classList.add("nav_link"));
+
+  const handleOverCode = function (e) {
+    if (e.target.classList.contains("nav_link")) {
+      const link = e.target;
+
+      const siblings = link
+        .closest(".nav-list-om")
+        .querySelectorAll(".nav_link");
+
+      siblings.forEach((el) => {
+        if (el !== link) {
+          el.style.opacity = this;
+          el.style.transition = ".5s";
+        }
+      });
+    }
+  };
+
+  nav.addEventListener("mouseover", handleOverCode.bind(0.5));
+
+  nav.addEventListener("mouseout", handleOverCode.bind(1));
 }
